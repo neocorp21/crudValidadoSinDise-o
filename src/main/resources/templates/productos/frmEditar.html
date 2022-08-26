@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+</head>
+<body>
+	<header th:replace="plantilla/plantilla :: header"> </header>
+	<div  class="" >
+		<form th:object="${producto}" method="post"
+			th:action="@{/productos/grabar}">
+			<input type="hidden" th:field="*{id}" id="id" />
+			<div  class="" >
+				<div  class=""  th:text="${titulo}"></div>
+				<div  class="" >
+
+				  <div  class="" >
+						<label  class=""   >Nombre:</label>
+						<div  class="" >
+							<input type="text" th:field="*{nombre}"
+								class="form-control form-control-sm" id="nombre"
+								placeholder="Nombres del producto" /> <small
+								 class="" 
+								th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
+						</div>
+
+					</div>
+
+					<div  class="" >
+						<label class=""   >Precio:</label>
+						<div  class="" >
+							<input type="text" th:field="*{precio}"
+								 class=""  id="precio"
+								placeholder="Precio del producto" /> 
+								
+								<small
+				 class="" 
+								th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}"></small>
+						</div>
+					</div>
+
+					<div  class="" >
+						<label  class=""  for="stock">Stock:</label>
+						<div  class="" >
+							<input type="text" th:field="*{stock}"
+								 class=""  id="stock"
+								placeholder="Stock del producto" /> <small
+								 class="" 
+								th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}"></small>
+						</div>
+					</div>
+
+
+
+				</div>
+				<div  >
+					<input type="submit" class="" value="Guardar">
+				</div>
+			</div>
+		</form>
+	</div>
+	<footer th:replace="plantilla/plantilla :: footer"> </footer>
+</body>
+</html>
