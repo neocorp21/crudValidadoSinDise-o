@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/plantilla :: head">
+</head>
+<body>
+	<header th:replace="plantilla/plantilla :: header"></header>
+	<div class="container p-3">
+		<div class="card">
+			<div class="card-header">
+				<span th:text="${status}"></span> - <span th:text="${error}"></span>
+			</div>
+			<div class="car-body p-5">
+				<div>
+					<img th:src="@{/img/error.png}" width="48" height="48"
+						class="dinline" />
+					<p class="card-text d-inline">Ha realizado una solicitud
+						incorrecta!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="plantilla/plantilla :: footer"></footer>
+</body>
+</html>

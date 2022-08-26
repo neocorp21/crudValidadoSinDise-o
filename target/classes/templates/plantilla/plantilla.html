@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<!-- Bootstrap CSS  
+<!--<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">-->
+	<title>APP CRUD</title>
+</head>
+
+<body>
+
+	<!-- Barra de navegación -->
+	<header th:fragment="header">
+
+		<ul class="navbar-nav mr-auto">
+			<li><a th:href="@{/home}">Inicio</a></li>
+			<li><a th:href="@{/productos/todos}">Productos</a></li>
+		</ul>
+
+
+		<!-- MENSAJES -->
+		<div class="alert alert-success alert-dismissable" th:if="${success != null}">
+			<label th:text="${success}"></label>
+
+		</div>
+		<div th:if="${error != null}">
+			<label th:text="${error}"></label>
+
+		</div>
+		<div th:if="${warning != null}">
+			<label th:text="${warning}"></label>
+
+		</div>
+		<div th:if="${info != null}">
+			<label th:text="${info}"></label>
+
+		</div>
+
+	</header>
+
+	<!-- Contenido -->
+	<div class="container"></div>
+
+	<!-- Pie de pagina -->
+	<footer th:fragment="footer">
+
+		<!--- <script type="text/javascript" th:src="@{/js/jquery.slim.min.js}"></script>-->
+
+	</footer>
+</body>
+
+</html>
